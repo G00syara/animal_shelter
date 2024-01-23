@@ -6,18 +6,18 @@ import styled from '@emotion/styled';
 const App = () => {
     const [someText, setSomeText] = useState<string[]>(['текст']);
   return (
-    <>
-    <BaseDivWrappser >
-        <Button variant="contained" onClick={() =>  setSomeText((prevText) => [...prevText, 'пробный текст'])}>
-            Какой то текст
-        </Button>
-    </BaseDivWrappser>
-    <div>
-        {someText.map((text) => (
-            <div key={text}>{text}</div>
-        ))}
+    <div style={{backgroundColor: '#381e49',   width: '100vw', height: '100vh',overflow: 'hidden', backgroundSize: 'cover'}}>
+        <BaseDivWrappser >
+            <Button variant="contained" onClick={() =>  setSomeText((prevText) => [...prevText, 'пробный текст'])}>
+                Какой то текст
+            </Button>
+        </BaseDivWrappser>
+        <div>
+            {someText.map((text) => (
+                <div key={text}>{text}</div>
+            ))}
+        </div>
     </div>
-    </>
   );
 }
 

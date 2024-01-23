@@ -16,5 +16,5 @@ export const BaseDivWrappser:FC <BaseDivWrapperProps> = ({children}) => {
 const StyledDiv = styled.div`
     display: flex;    
     align-items: center;
-    justify-content: center;    
+    justify-content: center;
 `

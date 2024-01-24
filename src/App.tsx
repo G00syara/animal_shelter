@@ -1,30 +1,33 @@
 import React, { useState } from 'react';
 import { Button } from '@mui/material';
-import { BaseDivWrappser } from './components/BaseDivWrapper';
+import { BaseDivWrapper, BaseWrapper } from './components/Base';
 import styled from '@emotion/styled';
 
 const App = () => {
-    const [someText, setSomeText] = useState<string[]>(['текст']);
+  const [someText, setSomeText] = useState<string[]>(['текст']);
   return (
-    <div style={{backgroundColor: '#381e49',   width: '100vw', height: '100vh',overflow: 'hidden', backgroundSize: 'cover'}}>
-        <BaseDivWrappser >
-            <Button variant="contained" onClick={() =>  setSomeText((prevText) => [...prevText, 'пробный текст'])}>
-                Какой то текст
-            </Button>
-        </BaseDivWrappser>
+    <BaseDivWrapper>
+      <div>
+        <BaseWrapper>
+          <Button variant="contained" onClick={() => setSomeText((prevText) => [...prevText, 'пробный текст'])}>
+            Какой то текст
+          </Button>
+        </BaseWrapper>
         <div>
-            {someText.map((text) => (
-                <div key={text}>{text}</div>
-            ))}
+          {someText.map((text) => (
+            <div key={text}>{text}</div>
+          ))}
         </div>
-    </div>
+      </div>
+    </BaseDivWrapper>
   );
-}
+};
 
 export default App;
 
-{/* <Button sx={{width:50, height:50}} variant="contained" onClick={() =>  setSomeText((prevText) => [...prevText, 'пробный текст'])}> */}
-
+{
+  /* <Button sx={{width:50, height:50}} variant="contined" onClick={() =>  setSomeText((prevText) => [...prevText, 'пробный текст'])}> */
+}
 
 // const StyledButton = styled(Button)`
 //     width: ${((props) => props.sx.width ? props.width : '50px')}

@@ -1,5 +1,4 @@
-import styled from "@emotion/styled";
-import { Button } from "@mui/material";
+import styled from '@emotion/styled';
+import { Button } from '@mui/material';
 
-export const CustomButton = styled(Button)`
-`
+export const CustomButton = styled(Button)``;

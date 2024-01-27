@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { Button } from '@mui/material';
 import { BaseDivWrapper, BaseWrapper } from './components/Base';
 import styled from '@emotion/styled';
+import { Navbar } from './components/Navbar';
 
 const App = () => {
   const [someText, setSomeText] = useState<string[]>(['текст']);
   return (
     <BaseDivWrapper>
       <div>
+        <Navbar />
         <BaseWrapper>
           <Button variant="contained" onClick={() => setSomeText((prevText) => [...prevText, 'пробный текст'])}>
             Какой то текст

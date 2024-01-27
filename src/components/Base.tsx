@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { FC } from 'react';
+import { MAIN_COLOR } from '../const/colors';
 
 interface BaseDivWrapperProps {
   children?: React.ReactElement;
@@ -15,7 +16,7 @@ export const BaseWrapper: FC<BaseDivWrapperProps> = ({ children }) => {
 
 const StyledDiv = styled.div`
   display: flex;
-  background-color: #381e49;
+  background-color: ${MAIN_COLOR};
   width: 100vw;
   height: 100vh;
 `;

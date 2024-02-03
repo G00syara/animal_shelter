@@ -7,6 +7,8 @@ const AboutLink = () => <Button sx={{ color: '#fff', fontSize: '2vh' }}>About</B
 
 const ContactLink = () => <Button sx={{ color: '#fff', fontSize: '2vh' }}>Contact</Button>;
 
+const PhotoLink = () => <Button sx={{ color: '#fff', fontSize: '2vh' }}>PhotoLink</Button>;
+
 const NavbarList = () => {
   return (
     <>

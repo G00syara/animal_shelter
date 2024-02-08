@@ -2,6 +2,7 @@ import { Button, CardMedia } from '@mui/material';
 import ImageForNavbar from '../images/imageForNavbar.png';
 
 import { makeStyles } from '@mui/styles';
+import NavbarItem from './NavbarItem';
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -21,27 +22,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Projects = () => <Button sx={{ color: '#fff', fontSize: '2vh' }}>Projects</Button>;
-
-const Blogs = () => <Button sx={{ color: '#fff', fontSize: '2vh' }}>Blogs</Button>;
-
-const HomeLink = () => <Button sx={{ color: '#fff', fontSize: '2vh' }}>Home</Button>;
-
-const AboutLink = () => <Button sx={{ color: '#fff', fontSize: '2vh' }}>About</Button>;
-
-const ContactLink = () => <Button sx={{ color: '#fff', fontSize: '2vh' }}>Contact</Button>;
-
 const NavbarList = () => {
+  const navbarItems = ['Projects', 'Blogs', 'Home', 'About', 'Contact'];
+
   const classes = useStyles();
 
   return (
     <>
-      <HomeLink />
-      <AboutLink />
+      {navbarItems.map((item) => (
+        <NavbarItem key={item}>{item}</NavbarItem>
+      ))}
+
       <CardMedia className={classes.card} component="img" image={ImageForNavbar} />
-      <Blogs />
-      <Projects />
-      <ContactLink />
     </>
   );
 };

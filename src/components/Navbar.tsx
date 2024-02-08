@@ -11,12 +11,6 @@ import styled from '@emotion/styled';
 import { DARKEST_MAIN_COLOR, UNDER_NAVBAR_COLOR } from '../const/colors';
 import NavbarList from './NavbarList';
 
-const HomeLink = () => <Button sx={{ color: '#fff', fontSize: '2vh' }}>Home</Button>;
-
-const AboutLink = () => <Button sx={{ color: '#fff', fontSize: '2vh' }}>About</Button>;
-
-const ContactLink = () => <Button sx={{ color: '#fff', fontSize: '2vh' }}>Contact</Button>;
-
 export const Navbar = () => {
   return (
     <StyledNavbar>

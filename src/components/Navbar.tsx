@@ -23,7 +23,9 @@ export const Navbar = () => {
       {/* <CssBaseline /> */}
       <StyledAppBar>
         <BaseWrapper>
-          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
+          <Box
+            sx={{ display: 'flex', columnGap: '3em', alignItems: 'center', justifyContent: 'center', width: '100%' }}
+          >
             <NavbarList />
           </Box>
         </BaseWrapper>
@@ -43,7 +45,7 @@ const StyledNavbar = styled(Box)`
 const StyledAppBar = styled(AppBar)`
   background-color: ${DARKEST_MAIN_COLOR}; /* устанавливаем фон как прозрачный */
   border-bottom: 3px solid ${UNDER_NAVBAR_COLOR};
-  height: 8vh;
+  height: 10vh;
 `;
 
 const BaseWrapper = styled.div`

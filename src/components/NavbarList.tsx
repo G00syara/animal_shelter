@@ -21,6 +21,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const Projects = () => <Button sx={{ color: '#fff', fontSize: '2vh' }}>Projects</Button>;
+
+const Blogs = () => <Button sx={{ color: '#fff', fontSize: '2vh' }}>Blogs</Button>;
+
 const HomeLink = () => <Button sx={{ color: '#fff', fontSize: '2vh' }}>Home</Button>;
 
 const AboutLink = () => <Button sx={{ color: '#fff', fontSize: '2vh' }}>About</Button>;
@@ -33,8 +37,10 @@ const NavbarList = () => {
   return (
     <>
       <HomeLink />
-      <CardMedia className={classes.card} component="img" image={ImageForNavbar} />
       <AboutLink />
+      <CardMedia className={classes.card} component="img" image={ImageForNavbar} />
+      <Blogs />
+      <Projects />
       <ContactLink />
     </>
   );

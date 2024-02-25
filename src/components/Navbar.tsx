@@ -8,7 +8,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import styled from '@emotion/styled';
-import { DARKEST_MAIN_COLOR, UNDER_NAVBAR_COLOR } from '../const/colors';
+import { DARKEST_MAIN_COLOR, LIGHTEN_NAVBAR_COLOR } from '../const/colors';
 import NavbarList from './NavbarList';
 
 const HomeLink = () => <Button sx={{ color: '#fff', fontSize: '2vh' }}>Home</Button>;
@@ -44,7 +44,7 @@ const StyledNavbar = styled(Box)`
 
 const StyledAppBar = styled(AppBar)`
   background-color: ${DARKEST_MAIN_COLOR}; /* устанавливаем фон как прозрачный */
-  border-bottom: 3px solid ${UNDER_NAVBAR_COLOR};
+  border-bottom: 3px solid ${LIGHTEN_NAVBAR_COLOR};
   height: 10vh;
 `;
 

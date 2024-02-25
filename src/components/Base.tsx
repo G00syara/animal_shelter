@@ -16,9 +16,11 @@ export const BaseWrapper: FC<BaseDivWrapperProps> = ({ children }) => {
 
 const StyledDiv = styled.div`
   display: flex;
+  flex-direction: column;
   background-color: ${MAIN_COLOR};
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  overflow-y: auto;
 `;
 
 const BaseDiv = styled.div`

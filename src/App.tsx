@@ -14,7 +14,6 @@ const App = () => {
         <CSS>
           <CSS>Something</CSS> {/* Применяем стили к этому элементу */}
         </CSS>
-        <Line />
         <AboutPageContainer>
           <AboutPage />
         </AboutPageContainer>
@@ -31,13 +30,17 @@ const AppContentWrapper = styled.div`
   align-items: center;
   overflow-y: auto;
   height: 100vh;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const Line = styled.hr`
   width: 100%;
   height: 2vh;
   border: none;
-  border-top: 15px solid black;
   margin-top: 20px;
 `;
 

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import { keyframes } from '@emotion/react'; // Используем @emotion/react для импорта keyframes
+import { css, keyframes } from '@emotion/react'; // Используем @emotion/react для импорта keyframes
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
   SiTypescript,
   SiRedux,
@@ -13,6 +13,7 @@ import {
   SiDocker,
   SiSequelize,
 } from 'react-icons/si';
+import BackgroundImage from './BackgroundImage';
 
 const shakeAnimation = keyframes`
   0% { transform: translateX(-3px); }
@@ -22,50 +23,67 @@ const shakeAnimation = keyframes`
   100% { transform: translateX(0px); }
 `;
 
+const shakeAnimationCss = css`
+  ${shakeAnimation} 1s ease-in-out
+`;
+
+const toolData = [
+  { name: 'TypeScript', icon: SiTypescript },
+  { name: 'Redux', icon: SiRedux },
+  { name: 'Node', icon: SiNodedotjs },
+  { name: 'MongoDB', icon: SiMongodb },
+  { name: 'Styled', icon: SiStyledcomponents },
+  { name: 'PostgreSQL', icon: SiPostgresql },
+  { name: 'React', icon: SiReact },
+  { name: 'Docker', icon: SiDocker },
+  { name: 'Sequelize', icon: SiSequelize },
+];
+
 const AboutPage = () => {
+  const [hoveredItems, setHoveredItems] = useState<boolean[]>(Array(toolData.length).fill(false));
+
+  const handleMouseEnter = (index: number) => {
+    const updatedHoveredItems = [...hoveredItems];
+    updatedHoveredItems[index] = true;
+    setHoveredItems(updatedHoveredItems);
+  };
+
+  const handleMouseLeave = (index: number) => {
+    const updatedHoveredItems = [...hoveredItems];
+    updatedHoveredItems[index] = false;
+    setHoveredItems(updatedHoveredItems);
+  };
+
   return (
     <PageContainer>
       <SomeDiv>
+        <BackgroundImage />
         <ToolContainer>
           <Row>
-            <Tool>
-              <SiTypescript size={30} />
-              <ToolText>TypeScript</ToolText>
-            </Tool>
-            <Tool>
-              <SiRedux size={30} />
-              <ToolText>Redux</ToolText>
-            </Tool>
-            <Tool>
-              <SiNodedotjs size={30} />
-              <ToolText>Node</ToolText>
-            </Tool>
-            <Tool>
-              <SiMongodb size={30} />
-              <ToolText>MongoDB</ToolText>
-            </Tool>
-            <Tool>
-              <SiStyledcomponents size={30} />
-              <ToolText>Styled</ToolText>
-            </Tool>
+            {toolData.slice(0, 5).map((tool, index) => (
+              <Tool
+                key={tool.name}
+                className={hoveredItems[index] ? 'hovered' : ''}
+                onMouseEnter={() => handleMouseEnter(index)}
+                onAnimationEnd={() => handleMouseLeave(index)}
+              >
+                <tool.icon size={30} />
+                <ToolText>{tool.name}</ToolText>
+              </Tool>
+            ))}
           </Row>
           <Row>
-            <Tool>
-              <SiPostgresql size={30} />
-              <ToolText>PostgreSQL</ToolText>
-            </Tool>
-            <Tool>
-              <SiReact size={30} />
-              <ToolText>React</ToolText>
-            </Tool>
-            <Tool>
-              <SiDocker size={30} />
-              <ToolText>Docker</ToolText>
-            </Tool>
-            <Tool>
-              <SiSequelize size={30} />
-              <ToolText>Sequelize</ToolText>
-            </Tool>
+            {toolData.slice(5, 9).map((tool, index) => (
+              <Tool
+                key={tool.name}
+                className={hoveredItems[index + 5] ? 'hovered' : ''}
+                onMouseEnter={() => handleMouseEnter(index + 5)}
+                onAnimationEnd={() => handleMouseLeave(index + 5)}
+              >
+                <tool.icon size={30} />
+                <ToolText>{tool.name}</ToolText>
+              </Tool>
+            ))}
           </Row>
         </ToolContainer>
       </SomeDiv>
@@ -81,15 +99,17 @@ const PageContainer = styled.div`
   justify-content: center;
   width: 100%;
   height: 70vh;
+  position: relative;
+  z-index: 2;
 `;
 
 const SomeDiv = styled.div`
   width: 50%;
-  background-color: #bb6a0e;
+  background-color: transparent;
 `;
 
 const ToolContainer = styled.div`
-  background-color: #bababa;
+  background-color: #959595;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -119,9 +139,9 @@ const Tool = styled.div`
     inset 0px 0px 3px rgba(255, 255, 255, 0.2);
   transition: color 0.5s ease-in-out;
 
-  &:hover {
+  &.hovered {
     color: #ff7f00;
-    animation: ${shakeAnimation} 1s ease-in-out;
+    animation: ${shakeAnimationCss};
   }
 `;
 

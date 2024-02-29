@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import { Navbar } from './components/Navbar';
 import { Global, css } from '@emotion/react';
 import AboutPage from './components/AboutPage/AboutPage';
+import HomePage from './components/MainPage/HomePage';
 
 const App = () => {
   return (
@@ -11,9 +12,9 @@ const App = () => {
       <AppContentWrapper>
         <Global styles={globalStyles} />
         <Navbar />
-        <CSS>
-          <CSS>Something</CSS> {/* Применяем стили к этому элементу */}
-        </CSS>
+        <HomePageContainer>
+          <HomePage />
+        </HomePageContainer>
         <AboutPageContainer>
           <AboutPage />
         </AboutPageContainer>
@@ -49,6 +50,11 @@ const AboutPageContainer = styled.div`
   flex-grow: 1;
 `;
 
+
+const HomePageContainer = styled.div`
+  margin-top: 20px;
+`;
+
 export const globalStyles = css`
   @font-face {
     font-family: 'Protest Revolution';
@@ -56,8 +62,4 @@ export const globalStyles = css`
     font-weight: normal;
     font-style: normal;
   }
-`;
-
-const CSS = styled.div`
-  height: 500px;
 `;

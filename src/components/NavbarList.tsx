@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const NavbarList = () => {
-  const navbarItems = ['Projects', 'Blogs', 'Home', 'About', 'Contact'];
+  const navbarItems = ['Home', 'About Me', 'Projects', 'Blogs', 'Contact'];
 
   const classes = useStyles();
 

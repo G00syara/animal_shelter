@@ -1,14 +1,10 @@
-import React, { FC } from 'react';
+import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 
-import IconButton from '@mui/material/IconButton';
-
-import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-import Button from '@mui/material/Button';
 import styled from '@emotion/styled';
-import { DARKEST_MAIN_COLOR, LIGHTEN_NAVBAR_COLOR } from '../const/colors';
+import { DARKEST_MAIN_COLOR, LIGHTEN_NAVBAR_COLOR } from 'const/colors';
 import NavbarList from './NavbarList';
 
 export const Navbar = () => {

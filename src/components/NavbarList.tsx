@@ -1,10 +1,10 @@
-import { Button, CardMedia } from '@mui/material';
-import ImageForNavbar from '../images/imageForNavbar.png';
+import { CardMedia } from '@mui/material';
+import ImageForNavbar from 'images/imageForNavbar.png';
 
 import { makeStyles } from '@mui/styles';
 import NavbarItem from './NavbarItem';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   card: {
     maxHeight: '8vh',
     maxWidth: '65px',

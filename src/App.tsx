@@ -38,18 +38,10 @@ const AppContentWrapper = styled.div`
   }
 `;
 
-const Line = styled.hr`
-  width: 100%;
-  height: 2vh;
-  border: none;
-  margin-top: 20px;
-`;
-
 const AboutPageContainer = styled.div`
   width: 100%;
   flex-grow: 1;
 `;
-
 
 const HomePageContainer = styled.div`
   margin-top: 20px;

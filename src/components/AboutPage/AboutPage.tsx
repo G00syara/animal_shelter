@@ -59,6 +59,12 @@ const AboutPage = () => {
       <SomeDiv>
         <BackgroundImage />
         <ToolContainer>
+          <HeaderTextContainer>
+            <HeaderTextWrapper>
+              <HeaderText>My Competitions</HeaderText>
+              <HeaderText>My Competitions</HeaderText>
+            </HeaderTextWrapper>
+          </HeaderTextContainer>
           <Row>
             {toolData.slice(0, 5).map((tool, index) => (
               <Tool
@@ -148,4 +154,56 @@ const Tool = styled.div`
 const ToolText = styled.div`
   margin-left: 10px;
   cursor: default;
+`;
+
+const HeaderTextContainer = styled.div`
+  width: 100%;
+  overflow: hidden;
+  margin: auto;
+`;
+
+const HeaderTextWrapper = styled.div`
+  display: flex;
+  width: 200%;
+  animation: ticker 4s linear infinite;
+  @keyframes ticker {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+`;
+
+const HeaderText = styled.h1`
+  color: #969696;
+  margin-left: 120px;
+  white-space: nowrap;
+  width: 100%;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+
+  animation: color-change 5s infinite;
+
+  @keyframes color-change {
+    0% {
+      color: #ff9900;
+    }
+    25% {
+      color: #b87e14;
+    }
+    50% {
+      color: #005aff;
+    }
+    75% {
+      color: #144eb8;
+    }
+    100% {
+      color: #ff9900;
+    }
+  }
 `;

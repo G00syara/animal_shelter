@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import { DARKEST_MAIN_COLOR, LIGHTEN_NAVBAR_COLOR } from '../../const/colors';
-import ImageForHomePage from '../../images/Generate_russian_man_white_people_programmer_with_Laptop_sideways_on_table_light_orange_color_3033283596.png';
+import { LIGHTEN_NAVBAR_COLOR } from 'const/colors';
+import ImageForHomePage from 'images/Generate_russian_man_white_people_programmer_with_Laptop_sideways_on_table_light_orange_color_3033283596.png';
 import { CardMedia } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   card: {
     borderRadius: '25%',
     border: '5px solid black',
@@ -41,22 +41,18 @@ const HomePage = () => {
           <SText>t</SText>
           <SText>e</SText>
           <SText>n</SText>
-          <SText>d </SText>
-          {''} and <SText>B</SText>
+          <SText>d </SText> and <SText>B</SText>
           <SText>a</SText>
           <SText>c</SText>
           <SText>k</SText>
           <SText>e</SText>
           <SText>n</SText>
-          <SText>d</SText>
-          {''} Developer. Help {''}
-          <SText>p</SText>
+          <SText>d</SText> Developer. Help <SText>p</SText>
           <SText>e</SText>
           <SText>o</SText>
           <SText>p</SText>
           <SText>l</SText>
-          <SText>e</SText> realise their wildest {''}
-          <SText>d</SText>
+          <SText>e</SText> realise your wildest <SText>d</SText>
           <SText>r</SText>
           <SText>e</SText>
           <SText>a</SText>

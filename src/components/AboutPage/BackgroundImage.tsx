@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import gifBackgroundAboutMe from '../../images/gifBackgroundAboutPage.gif';
+import gifBackgroundAboutMe from 'images/gifBackgroundAboutPage.gif';
 import { useState } from 'react';
 
 interface CursorTrailProps {

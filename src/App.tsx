@@ -3,8 +3,10 @@ import { BaseDivWrapper } from './components/Base';
 import styled from '@emotion/styled';
 import { Navbar } from './components/Navbar';
 import { Global, css } from '@emotion/react';
-import AboutPage from './components/AboutPage/AboutPage';
-import HomePage from './components/MainPage/HomePage';
+import AboutPage from 'components/AboutPage/AboutPage';
+import HomePage from 'components/MainPage/HomePage';
+import ProjectPage from 'components/ProjectPage/ProjectPage';
+import { DARKEST_MAIN_COLOR, LIGHTEN_NAVBAR_COLOR } from 'const/colors';
 
 const App = () => {
   return (
@@ -18,6 +20,9 @@ const App = () => {
         <AboutPageContainer>
           <AboutPage />
         </AboutPageContainer>
+        <ProjectsContainer>
+          <ProjectPage />
+        </ProjectsContainer>
       </AppContentWrapper>
     </BaseDivWrapper>
   );
@@ -45,6 +50,20 @@ const AboutPageContainer = styled.div`
 
 const HomePageContainer = styled.div`
   margin-top: 20px;
+`;
+
+const ProjectsContainer = styled.div`
+  width: 100%;
+  flex-grow: 1;
+  animation: colorChange 3s infinite alternate;
+  @keyframes colorChange {
+    0% {
+      background-color: ${DARKEST_MAIN_COLOR};
+    }
+    100% {
+      background-color: ${LIGHTEN_NAVBAR_COLOR};
+    }
+  }
 `;
 
 export const globalStyles = css`

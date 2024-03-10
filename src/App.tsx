@@ -5,6 +5,7 @@ import { Navbar } from './components/Navbar';
 import { Global, css } from '@emotion/react';
 import AboutPage from './components/AboutPage/AboutPage';
 import HomePage from './components/MainPage/HomePage';
+import BlogPage from 'components/BlogPage/BlogPage';
 
 const App = () => {
   return (
@@ -18,6 +19,9 @@ const App = () => {
         <AboutPageContainer>
           <AboutPage />
         </AboutPageContainer>
+        <BlogPageContainer>
+          <BlogPage />
+        </BlogPageContainer>
       </AppContentWrapper>
     </BaseDivWrapper>
   );
@@ -45,6 +49,11 @@ const AboutPageContainer = styled.div`
 
 const HomePageContainer = styled.div`
   margin-top: 20px;
+`;
+
+const BlogPageContainer = styled.div`
+  width: 100%;
+  flex-grow: 1;
 `;
 
 export const globalStyles = css`

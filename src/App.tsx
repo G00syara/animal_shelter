@@ -7,8 +7,6 @@ import AboutPage from 'components/AboutPage/AboutPage';
 import HomePage from 'components/MainPage/HomePage';
 import ProjectPage from 'components/ProjectPage/ProjectPage';
 import { DARKEST_MAIN_COLOR, LIGHTEN_NAVBAR_COLOR } from 'const/colors';
-import AboutPage from './components/AboutPage/AboutPage';
-import HomePage from './components/MainPage/HomePage';
 import BlogPage from 'components/BlogPage/BlogPage';
 
 const App = () => {

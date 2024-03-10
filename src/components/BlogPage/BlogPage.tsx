@@ -27,7 +27,7 @@ const BlogPage = () => {
   return (
     <PageContainer>
       <HeaderContainer>
-        <HeaderText>Blog</HeaderText>
+        <HeaderText>My Blog</HeaderText>
         <Underline />
       </HeaderContainer>
       <BlogsContainer>
@@ -59,12 +59,20 @@ const HeaderText = styled.h1`
   text-align: center;
   font-family: 'Protest Revolution', sans-serif;
   font-weight: 800;
-  font-size: 42px;
+  font-size: 56px;
+  text-shadow:
+    0 0 5px #959595,
+    0 0 10px #959595,
+    0 0 15px #959595,
+    0 0 20px #959595,
+    0 0 25px #959595,
+    0 0 30px #959595,
+    0 0 35px #959595;
 `;
 
 const Underline = styled.div`
   height: 5px;
-  width: 7vw;
+  width: 12vw;
   background-color: #1d6c86;
 `;
 

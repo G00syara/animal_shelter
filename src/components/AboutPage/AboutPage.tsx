@@ -181,12 +181,7 @@ const HeaderText = styled.h1`
   margin-left: 120px;
   white-space: nowrap;
   width: 100%;
-  text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
-
+  font-family: 'Protest Revolution', sans-serif;
   animation: color-change 5s infinite;
 
   @keyframes color-change {

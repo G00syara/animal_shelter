@@ -7,6 +7,9 @@ import AboutPage from 'components/AboutPage/AboutPage';
 import HomePage from 'components/MainPage/HomePage';
 import ProjectPage from 'components/ProjectPage/ProjectPage';
 import { DARKEST_MAIN_COLOR, LIGHTEN_NAVBAR_COLOR } from 'const/colors';
+import AboutPage from './components/AboutPage/AboutPage';
+import HomePage from './components/MainPage/HomePage';
+import BlogPage from 'components/BlogPage/BlogPage';
 
 const App = () => {
   return (
@@ -23,6 +26,9 @@ const App = () => {
         <ProjectsContainer>
           <ProjectPage />
         </ProjectsContainer>
+        <BlogPageContainer>
+          <BlogPage />
+        </BlogPageContainer>
       </AppContentWrapper>
     </BaseDivWrapper>
   );
@@ -64,6 +70,10 @@ const ProjectsContainer = styled.div`
       background-color: ${LIGHTEN_NAVBAR_COLOR};
     }
   }
+`;
+const BlogPageContainer = styled.div`
+  width: 100%;
+  flex-grow: 1;
 `;
 
 export const globalStyles = css`

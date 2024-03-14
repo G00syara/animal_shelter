@@ -47,7 +47,7 @@ const PageContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 40vh;
+  height: 60vh;
   position: relative;
 `;
 

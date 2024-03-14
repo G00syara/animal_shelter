@@ -6,8 +6,9 @@ import { Global, css } from '@emotion/react';
 import AboutPage from 'components/AboutPage/AboutPage';
 import HomePage from 'components/MainPage/HomePage';
 import ProjectPage from 'components/ProjectPage/ProjectPage';
-import { DARKEST_MAIN_COLOR, LIGHTEN_NAVBAR_COLOR } from 'const/colors';
+import { DARKEST_MAIN_COLOR, LIGHTEN_NAVBAR_COLOR, MAIN_COLOR } from 'const/colors';
 import BlogPage from 'components/BlogPage/BlogPage';
+import ContactsPage from 'components/ContactsPage/ContactsPage';
 
 const App = () => {
   return (
@@ -27,6 +28,10 @@ const App = () => {
         <BlogPageContainer>
           <BlogPage />
         </BlogPageContainer>
+        <Triangle />
+        <ContactsPageContainer>
+          <ContactsPage />
+        </ContactsPageContainer>
       </AppContentWrapper>
     </BaseDivWrapper>
   );
@@ -69,6 +74,11 @@ const ProjectsContainer = styled.div`
     }
   }
 `;
+const ContactsPageContainer = styled.div`
+  width: 100%;
+  flex-grow: 1;
+`;
+
 const BlogPageContainer = styled.div`
   width: 100%;
   flex-grow: 1;
@@ -81,4 +91,14 @@ export const globalStyles = css`
     font-weight: normal;
     font-style: normal;
   }
+`;
+
+const Triangle = styled.div`
+  background-color: #a0a0a0;
+  border-bottom: 100px solid ${MAIN_COLOR};
+  border-left: 50vw solid rgba(0, 0, 0, 0);
+  border-right: 50vw solid rgba(0, 0, 0, 0);
+  height: 0;
+  width: 0;
+  transform: rotate(180deg);
 `;

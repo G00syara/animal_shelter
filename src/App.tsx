@@ -9,6 +9,7 @@ import ProjectPage from 'components/ProjectPage/ProjectPage';
 import { DARKEST_MAIN_COLOR, LIGHTEN_NAVBAR_COLOR, MAIN_COLOR } from 'const/colors';
 import BlogPage from 'components/BlogPage/BlogPage';
 import ContactsPage from 'components/ContactsPage/ContactsPage';
+import Footer from 'components/Footer/Footer';
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
         <ContactsPageContainer>
           <ContactsPage />
         </ContactsPageContainer>
+        <Footer />
       </AppContentWrapper>
     </BaseDivWrapper>
   );

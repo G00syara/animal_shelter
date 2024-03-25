@@ -1,35 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import githubBackground from 'images/githubBackground.png';
-import vkBackground from 'images/vkBackground.png';
-import telegramBackground from 'images/telegramBackground.png';
-import discordBackground from 'images/discordBackground.png';
+import { DARK_GRAY_COLOR, WHITE_COLOR, BLACK_COLOR } from 'const/colors';
+import { footerItems } from 'const/elements';
 
 const Footer = () => {
-  const footerItems = [
-    {
-      href: 'https://github.com/G00syara',
-      name: 'Github',
-      background: githubBackground,
-    },
-    {
-      href: 'https://vk.com/prekrasniy__mir',
-      name: 'VK',
-      background: vkBackground,
-    },
-    {
-      href: 'https://t.me/Goosyara_0',
-      name: 'Telegram',
-      background: telegramBackground,
-    },
-    {
-      href: 'https://discordapp.com/users/189435729309335552',
-      name: 'Discord',
-      background: discordBackground,
-    },
-  ];
-
   return (
     <FooterContainer>
       {footerItems.map((item) => (
@@ -51,8 +26,8 @@ const FooterBlockLink = styled.a`
 
 const FooterContainer = styled.footer`
   display: flex;
-  background-color: #333;
-  color: #fff;
+  background-color: ${DARK_GRAY_COLOR};
+  color: ${WHITE_COLOR};
   text-align: center;
   width: 100%;
 `;
@@ -60,13 +35,26 @@ const FooterContainer = styled.footer`
 const FooterBlock = styled.div`
   flex: 1;
   padding: 3rem;
-  border: 1px solid #000000;
+  border: 1px solid ${BLACK_COLOR};
   background-size: contain;
   background-position: center;
+  max-width: 400px;
+  @media (max-width: 1440px) {
+    max-width: 350px;
+  }
+  @media (max-width: 1200px) {
+    max-width: 300px;
+  }
+  @media (max-width: 1024px) {
+    max-width: 250px;
+  }
+  @media (max-width: 768px) {
+    max-width: 200px;
+  }
 `;
 
 const FooterLink = styled.a`
-  color: #fff;
+  color: ${WHITE_COLOR};
   text-decoration: none;
   font-size: 5rem;
   text-shadow:
@@ -75,6 +63,18 @@ const FooterLink = styled.a`
     -1px 1px 0 #000,
     1px 1px 0 #000;
   font-weight: bold;
+  @media (max-width: 1440px) {
+    font-size: 4rem;
+  }
+  @media (max-width: 1200px) {
+    font-size: 3rem;
+  }
+  @media (max-width: 1024px) {
+    font-size: 2rem;
+  }
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export default Footer;

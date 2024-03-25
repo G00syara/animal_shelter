@@ -1,4 +1,5 @@
 import { Button } from '@mui/material';
+import { WHITE_COLOR } from 'const/colors';
 import React, { FC, ReactNode } from 'react';
 
 interface NavbarItem {
@@ -7,7 +8,7 @@ interface NavbarItem {
 
 const NavbarItem: FC<NavbarItem> = ({ children, ...props }) => {
   return (
-    <Button sx={{ color: '#fff', fontSize: '2vh' }} {...props}>
+    <Button sx={{ color: `${WHITE_COLOR}`, fontSize: '2vh' }} {...props}>
       {children}
     </Button>
   );

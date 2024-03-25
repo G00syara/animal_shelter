@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import gifBackgroundAboutMe from 'images/gifBackgroundAboutPage.gif';
+import { BLACK_COLOR } from 'const/colors';
+import gifBackgroundAboutMe from 'images/gifBackgroundMyCompetitionsPage.gif';
 import { useState } from 'react';
 
 interface CursorTrailProps {
@@ -47,7 +48,7 @@ const Image = styled.img`
   object-fit: cover;
   opacity: 0.9;
   filter: blur(4px) hue-rotate(4.642rad);
-  border-top: 8px solid black;
+  border-top: 8px solid ${BLACK_COLOR};
 `;
 
 const CursorTrail = styled.div<CursorTrailProps>`

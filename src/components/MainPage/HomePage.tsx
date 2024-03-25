@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import { LIGHTEN_NAVBAR_COLOR } from 'const/colors';
+import { BACKGROUND_BEFORE_HOME_PAGE_COLOR, LIGHTEN_NAVBAR_COLOR, TEXT_COLOR } from 'const/colors';
 import ImageForHomePage from 'images/Generate_russian_man_white_people_programmer_with_Laptop_sideways_on_table_light_orange_color_3033283596.png';
 import { CardMedia } from '@mui/material';
 import { makeStyles } from '@mui/styles';
@@ -9,7 +9,7 @@ const useStyles = makeStyles(() => ({
   card: {
     borderRadius: '25%',
     border: '5px solid black',
-    animation: '$scaleAnimation 3s infinite', // Adding an animation for continuous color rotation
+    animation: '$scaleAnimation 3s infinite',
   },
   '@keyframes scaleAnimation ': {
     '0%': {
@@ -69,7 +69,13 @@ const HomePage = () => {
 
 export default HomePage;
 
-const ImgDiv = styled.div``;
+const ImgDiv = styled.div`
+  @media (max-width: 1024px) {
+    width: 450px;
+    height: 450px;
+    padding-bottom: 25px;
+  }
+`;
 
 const HomePageWrapper = styled.div`
   margin-left: 40px;
@@ -79,6 +85,12 @@ const HomePageWrapper = styled.div`
   align-items: center;
   width: 95vw;
   height: 70vh;
+
+  @media (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
 `;
 
 const IntroduceText = styled.div`
@@ -88,7 +100,7 @@ const IntroduceText = styled.div`
   font-weight: 900
   border-radius: 25px;
   padding: 12px;
-  color: #ef952e;
+  color: ${TEXT_COLOR};
   text-shadow:
     -4px -1px 0 black,
     1px -1px 0 black,
@@ -116,7 +128,7 @@ const Background = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 25px;
-    background-color: #eae1df;
+    background-color: ${BACKGROUND_BEFORE_HOME_PAGE_COLOR};
     opacity: 0.25;
   }
   :hover {
@@ -137,7 +149,7 @@ const SecondText = styled.h2`
 `;
 
 const SText = styled.span`
-  color: #eae1df;
+  color: ${BACKGROUND_BEFORE_HOME_PAGE_COLOR};
   transition: 0.2s;
   top: 0;
   position: relative;

@@ -1,5 +1,12 @@
 import React, { useState, FormEvent } from 'react';
 import styled from '@emotion/styled';
+import {
+  DARK_GRAY_COLOR,
+  CONTACT_PAGE_BORDER_COLOR,
+  LETTER_CONTAINER_BACKGROUND_COLOR,
+  TRIANGLE_COLOR,
+} from 'const/colors';
+import { StyledButton } from 'components/buttons';
 
 const ContactsPage: React.FC = () => {
   const [name, setName] = useState<string>('');
@@ -66,7 +73,7 @@ const ContactsContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   min-height: 70vh;
-  background-color: #a0a0a0;
+  background-color: ${TRIANGLE_COLOR};
 `;
 
 const HeaderContainer = styled.div`
@@ -77,13 +84,13 @@ const HeaderContainer = styled.div`
 `;
 
 const Header = styled.h1`
-  color: #333;
+  color: ${DARK_GRAY_COLOR};
   font-size: 40px;
 `;
 const LetterContainer = styled.div`
   position: relative;
   width: 400px;
-  background-color: #f9f9f9;
+  background-color: ${LETTER_CONTAINER_BACKGROUND_COLOR};
   padding: 20px;
   border: 2px solid #ccc;
   border-radius: 10px;
@@ -104,7 +111,7 @@ const Input = styled.input`
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
-  border: 1px solid #ddd;
+  border: 1px solid ${CONTACT_PAGE_BORDER_COLOR};
 `;
 
 const Textarea = styled.textarea`
@@ -112,21 +119,6 @@ const Textarea = styled.textarea`
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
-  border: 1px solid #ddd;
+  border: 1px solid ${CONTACT_PAGE_BORDER_COLOR};
   resize: vertical;
-`;
-
-const StyledButton = styled.button`
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-
-  :hover {
-    background-color: #0056b3;
-  }
 `;

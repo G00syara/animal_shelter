@@ -2,43 +2,9 @@ import React from 'react';
 import styled from '@emotion/styled';
 import ProjectBlock from './ProjectBlock';
 import { LIGHTEN_NAVBAR_COLOR } from 'const/colors';
+import { projects } from 'const/elements';
 
 const ProjectPage = () => {
-  const projects = [
-    {
-      id: 1,
-      stack: ['Vue.js', 'Firebase', 'Typescript', 'Typescript', 'React', 'React', 'React'],
-      link: 'https://example.com/project1',
-    },
-    {
-      id: 2,
-      stack: ['Vue.js', 'Firebase'],
-      link: 'https://example.com/project2',
-    },
-    {
-      id: 3,
-      stack: ['Vue.js', 'Firebase'],
-      link: 'https://example.com/project2',
-    },
-    {
-      id: 4,
-      stack: ['Vue.js', 'Firebase'],
-      link: 'https://example.com/project2',
-    },
-    {
-      id: 5,
-      stack: ['Vue.js', 'Firebase'],
-      link: 'https://example.com/project2',
-    },
-    {
-      id: 6,
-      stack: ['Vue.js', 'Firebase'],
-      link: 'https://example.com/project2',
-    },
-
-    // Добавьте дополнительные проекты по мере необходимости
-  ];
-
   return (
     <PageWrapper>
       <HeaderText>My Projects</HeaderText>
@@ -60,7 +26,7 @@ const PageWrapper = styled.div`
 const ProjectsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  grid-gap: 3%;
+  grid-gap: 0 3%;
   margin: 3% 15%;
 `;
 

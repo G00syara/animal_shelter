@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { BLOGDATE_COLOR, GRAY_COLOR, H2_BLOG_COLOR, WHITE_COLOR } from 'const/colors';
 import { options } from 'const/dates';
 import React, { FC } from 'react';
 
@@ -25,18 +26,18 @@ const BlogWrapper = styled.div`
   &:hover {
     cursor: pointer;
     h2 {
-      color: #0099cd;
+      color: ${H2_BLOG_COLOR};
     }
   }
 `;
 
 const BlogTitle = styled.h2`
   opacity: 0.9;
-  color: white;
+  color: ${WHITE_COLOR};
 `;
 
 const BlogDate = styled.div`
-  color: #bec2c6;
+  color: ${BLOGDATE_COLOR};
   text-shadow:
     -1px -1px 0 #000,
     1px -1px 0 #000,
@@ -44,7 +45,7 @@ const BlogDate = styled.div`
     1px 1px 0 #000;
 `;
 const BlogDescription = styled.h5`
-  color: #cccccc;
+  color: ${GRAY_COLOR};
   text-shadow:
     -1px -1px 0 #000,
     1px -1px 0 #000,

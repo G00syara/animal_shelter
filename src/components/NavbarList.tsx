@@ -10,7 +10,7 @@ const useStyles = makeStyles(() => ({
     maxWidth: '65px',
     borderRadius: '50%',
     border: '3px solid black',
-    animation: '$rotateColors 5s linear infinite', // Adding an animation for continuous color rotation
+    animation: '$rotateColors 5s linear infinite',
   },
   '@keyframes rotateColors': {
     '0%': {
@@ -23,7 +23,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 const NavbarList = () => {
-  const navbarItems = ['Home', 'About Me', 'Projects', 'Blogs', 'Contact'];
+  const navbarItems = ['Home', 'Сompetitions', 'Projects', 'Blogs', 'Contact'];
 
   const classes = useStyles();
 

@@ -1,29 +1,10 @@
 import styled from '@emotion/styled';
 import React from 'react';
 import Blog from './Blog';
+import { BLOG_PAGE_UNDERLINE } from 'const/colors';
+import { blogs } from 'const/elements';
 
 const BlogPage = () => {
-  const blogs = [
-    {
-      title: 'Lorem ipsum dolor sit amet',
-      date: new Date(),
-      description:
-        'consectetur adipiscing elit. Vivamus pretium nibh quam, commodo aliquet est iaculis id. Donec facilisis sapien non sapien imperdiet hendrerit vitae non magna.',
-    },
-    {
-      title: 'Lorem ipsum dolor sit amet',
-      date: new Date(),
-      description:
-        'consectetur adipiscing elit. Vivamus pretium nibh quam, commodo aliquet est iaculis id. Donec facilisis sapien non sapien imperdiet hendrerit vitae non magna.',
-    },
-    {
-      title: 'Lorem ipsum dolor sit amet',
-      date: new Date(),
-      description:
-        'consectetur adipiscing elit. Vivamus pretium nibh quam, commodo aliquet est iaculis id. Donec facilisis sapien non sapien imperdiet hendrerit vitae non magna.',
-    },
-  ];
-
   return (
     <PageContainer>
       <HeaderContainer>
@@ -73,7 +54,7 @@ const HeaderText = styled.h1`
 const Underline = styled.div`
   height: 5px;
   width: 12vw;
-  background-color: #1d6c86;
+  background-color: ${BLOG_PAGE_UNDERLINE};
 `;
 
 const BlogsContainer = styled.div`

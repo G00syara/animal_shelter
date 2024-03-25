@@ -1,39 +1,58 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BaseDivWrapper } from './components/Base';
 import styled from '@emotion/styled';
 import { Navbar } from './components/Navbar';
 import { Global, css } from '@emotion/react';
-import AboutPage from 'components/AboutPage/AboutPage';
+import MyCompetitionsPage from 'components/MyCompetitionsPage/MyCompetitionsPage';
 import HomePage from 'components/MainPage/HomePage';
 import ProjectPage from 'components/ProjectPage/ProjectPage';
-import { DARKEST_MAIN_COLOR, LIGHTEN_NAVBAR_COLOR, MAIN_COLOR } from 'const/colors';
+import { DARKEST_MAIN_COLOR, LIGHTEN_NAVBAR_COLOR, MAIN_COLOR, TRIANGLE_COLOR } from 'const/colors';
 import BlogPage from 'components/BlogPage/BlogPage';
 import ContactsPage from 'components/ContactsPage/ContactsPage';
 import Footer from 'components/Footer/Footer';
+import Loader from 'components/Loader';
 
 const App = () => {
+  const [isLoad, setIsLoad] = useState(false);
+
+  useEffect(() => {
+    const delay = setTimeout(() => {
+      setIsLoad(true);
+    }, 1000);
+
+    return () => clearTimeout(delay);
+  }, []);
+
   return (
     <BaseDivWrapper>
       <AppContentWrapper>
-        <Global styles={globalStyles} />
-        <Navbar />
-        <HomePageContainer>
-          <HomePage />
-        </HomePageContainer>
-        <AboutPageContainer>
-          <AboutPage />
-        </AboutPageContainer>
-        <ProjectsContainer>
-          <ProjectPage />
-        </ProjectsContainer>
-        <BlogPageContainer>
-          <BlogPage />
-        </BlogPageContainer>
-        <Triangle />
-        <ContactsPageContainer>
-          <ContactsPage />
-        </ContactsPageContainer>
-        <Footer />
+        {isLoad ? (
+          <>
+            <Global styles={globalStyles} />
+            <Navbar />
+            <HomePageContainer>
+              <HomePage />
+            </HomePageContainer>
+            <MyCompetitionsPageContainer>
+              <MyCompetitionsPage />
+            </MyCompetitionsPageContainer>
+            <ProjectsContainer>
+              <ProjectPage />
+            </ProjectsContainer>
+            <BlogPageContainer>
+              <BlogPage />
+            </BlogPageContainer>
+            <Triangle />
+            <ContactsPageContainer>
+              <ContactsPage />
+            </ContactsPageContainer>
+            <Footer />
+          </>
+        ) : (
+          <LoaderWrapper>
+            <Loader />
+          </LoaderWrapper>
+        )}
       </AppContentWrapper>
     </BaseDivWrapper>
   );
@@ -54,7 +73,7 @@ const AppContentWrapper = styled.div`
   }
 `;
 
-const AboutPageContainer = styled.div`
+const MyCompetitionsPageContainer = styled.div`
   width: 100%;
   flex-grow: 1;
 `;
@@ -96,11 +115,22 @@ export const globalStyles = css`
 `;
 
 const Triangle = styled.div`
-  background-color: #a0a0a0;
+  background-color: ${TRIANGLE_COLOR};
   border-bottom: 100px solid ${MAIN_COLOR};
   border-left: 50vw solid rgba(0, 0, 0, 0);
   border-right: 50vw solid rgba(0, 0, 0, 0);
   height: 0;
   width: 0;
   transform: rotate(180deg);
+`;
+
+const LoaderWrapper = styled.div`
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #262626;
+  background: black;
+  z-index: 9999;
+  position: fixed;
 `;

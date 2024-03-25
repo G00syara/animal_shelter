@@ -1,19 +1,17 @@
 import styled from '@emotion/styled';
-import { css, keyframes } from '@emotion/react'; // Используем @emotion/react для импорта keyframes
+import { css, keyframes } from '@emotion/react';
 
 import React, { useState } from 'react';
-import {
-  SiTypescript,
-  SiRedux,
-  SiMongodb,
-  SiStyledcomponents,
-  SiNodedotjs,
-  SiPostgresql,
-  SiReact,
-  SiDocker,
-  SiSequelize,
-} from 'react-icons/si';
+
 import BackgroundImage from './BackgroundImage';
+import {
+  ABOUT_PAGE_TOOL_BACKGROUND_COLOR,
+  HOVEREDTOOL_COLOR,
+  TOOLCONTAINER_BACKGROUND_COLOR,
+  TOOLCONTAINER_BORDER_COLOR,
+  WHITE_COLOR,
+} from 'const/colors';
+import { toolData } from 'const/elements';
 
 const shakeAnimation = keyframes`
   0% { transform: translateX(-3px); }
@@ -27,19 +25,7 @@ const shakeAnimationCss = css`
   ${shakeAnimation} 1s ease-in-out
 `;
 
-const toolData = [
-  { name: 'TypeScript', icon: SiTypescript },
-  { name: 'Redux', icon: SiRedux },
-  { name: 'Node', icon: SiNodedotjs },
-  { name: 'MongoDB', icon: SiMongodb },
-  { name: 'Styled', icon: SiStyledcomponents },
-  { name: 'PostgreSQL', icon: SiPostgresql },
-  { name: 'React', icon: SiReact },
-  { name: 'Docker', icon: SiDocker },
-  { name: 'Sequelize', icon: SiSequelize },
-];
-
-const AboutPage = () => {
+const MyCompetitionsPage = () => {
   const [hoveredItems, setHoveredItems] = useState<boolean[]>(Array(toolData.length).fill(false));
 
   const handleMouseEnter = (index: number) => {
@@ -97,7 +83,7 @@ const AboutPage = () => {
   );
 };
 
-export default AboutPage;
+export default MyCompetitionsPage;
 
 const PageContainer = styled.div`
   display: flex;
@@ -115,11 +101,11 @@ const SomeDiv = styled.div`
 `;
 
 const ToolContainer = styled.div`
-  background-color: #959595;
+  background-color: ${TOOLCONTAINER_BACKGROUND_COLOR};
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2.5mm ridge #969696;
+  border: 2.5mm ridge ${TOOLCONTAINER_BORDER_COLOR};
   border-radius: 15px;
 `;
 
@@ -127,16 +113,17 @@ const Row = styled.div`
   display: flex;
   justify-content: space-around;
   width: 100%;
+  flex-wrap: wrap;
 `;
 
 const Tool = styled.div`
   font-size: 20px;
   padding: 10px;
-  color: white;
-  background-color: #302112;
+  color: ${WHITE_COLOR};
+  background-color: ${ABOUT_PAGE_TOOL_BACKGROUND_COLOR};
   display: flex;
   margin: 10px;
-  width: 150px;
+  width: 145px;
   align-items: center;
   border-radius: 10px;
   box-shadow:
@@ -146,7 +133,7 @@ const Tool = styled.div`
   transition: color 0.5s ease-in-out;
 
   &.hovered {
-    color: #ff7f00;
+    color: ${HOVEREDTOOL_COLOR};
     animation: ${shakeAnimationCss};
   }
 `;
@@ -177,13 +164,17 @@ const HeaderTextWrapper = styled.div`
 `;
 
 const HeaderText = styled.h1`
-  color: #969696;
+  color: ${TOOLCONTAINER_BORDER_COLOR};
   margin-left: 120px;
   white-space: nowrap;
   width: 100%;
+  font-size: 36px;
   font-family: 'Protest Revolution', sans-serif;
   animation: color-change 5s infinite;
-
+  text-shadow:
+    1px 3px 3px red,
+    0 0 1em blue,
+    0 0 0.2em blue;
   @keyframes color-change {
     0% {
       color: #ff9900;
